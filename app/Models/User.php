@@ -41,8 +41,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function myProducts(){
-        return $this->hasMany(\App\Models\Product::class, "user_id", "id");
-    }
 }

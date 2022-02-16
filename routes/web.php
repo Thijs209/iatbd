@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +13,6 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('product/{id}/owner',"App\Http\Controllers\ProductController@owner");
-
-Route::get('user/{naam}/products',"App\Http\Controllers\UserController@products")->name("myProducts");
-
-Route::get('user/{naam}',"App\Http\Controllers\UserController@show");
-
-Route::get('/product/{id}', 'App\Http\Controllers\ProductController@show');
-
-Route::get('/{naam?}', [UserController::class, 'show']);
+Route::get('/', function () {
+    return view('welcome');
+});
